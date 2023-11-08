@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <img src="../img/camiseta.jpeg" alt="Camiseta">
+            <h1>Tu Camiseta online</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/productos.html">Productos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="#" class="active">Cesta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-cesta">
+    <h1>Información del Comprador</h1>
+    <div class="formulario-comprador">
+        <form action="procesar_pago.php" method="POST">
+            <label for="nombre">Nombre y Apellidos:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="direccion">Dirección de Envío:</label>
+            <input type="text" id="direccion" name="direccion" required><br>
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required><br>
+
+            <label for="codigo-postal">Código Postal:</label>
+            <input type="text" id="codigo-postal" name="codigo_postal" required><br>
+
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" required><br>
+
+            <label for="forma-de-pago">Forma de Pago:</label>
+            <select id="forma-de-pago" name="forma_pago" required>
+                <option value="paypal">PayPal</option>
+                <option value="tarjeta">Tarjeta Bancaria</option>
+                <option value="apple-pay">Apple Pay</option>
+            </select><br>
+
+            <div id="campos-tarjeta" style="display: none;">
+                <label for="numero-tarjeta">Número de Cuenta:</label>
+                <input type="text" id="numero-tarjeta" name="numero_cuenta" pattern="\d{16}"
+                    placeholder="1234567890123456" required><br>
+
+                <label for="fecha-caducidad">Fecha de Caducidad (MM/YY):</label>
+                <input type="text" id="fecha-caducidad" name="fecha_caducidad" pattern="\d{2}/\d{2}" placeholder="MM/YY"
+                    required><br>
+
+                <label for="codigo-verificacion">Código de Seguridad (CVV):</label>
+                <input type="text" id="codigo-verificacion" name="codigo_seguridad" pattern="\d{3}" placeholder="123"
+                    required><br>
+            </div>
+            <button type="submit">Pagar</button>            
+        </form>
+    </div>
+</div>
+
+    <script src="../js/script.js"></script>
+
+    <footer>
+        <p>&copy; 2023 Tienda de Camisetas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
